@@ -1,0 +1,44 @@
+<h2>Create a New Practice</h2>
+<%= form_for @event do |form| %>
+<div class="well">
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+ 
+  <div>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+  
+    <div>
+<%= form.label :date %>
+  <div id="datetimepicker2" class="input-append">
+    <input data-format="yyyy, MM, dd, HH, mm, ss" type="text"></input>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
+  </div>
+<script type="text/javascript">
+  $(function() {
+    $('#datetimepicker2').datetimepicker({
+      language: 'en',
+      pick12HourFormat: true
+    });
+  });
+</script>
+  </div>
+  
+   <div>
+    <%= form.label :capacity %><br />
+    <%= form.text_field :capacity %>
+  </div>
+ </div>
+  <p><%= form.submit %></p>
+<% end %>

@@ -1,0 +1,13 @@
+<div class="well">
+<h1><%= @event.name %></h1>
+<h3>What:</h3>
+<h4><%= @event.description %></h4>
+<h3>Where:</h3>
+<p><%= @event.location %></p>
+<h3>When:</h3>
+<p><%= @event.date %></p>
+<h3>How many people:</h3>
+<p><%= @event.capacity %></p>
+</div>
+<%= link_to "Edit", edit_event_path(), :class => "brn btn-primary btn-large" %>
+<%= link_to 'Destroy', (), method: :delete, :class => "brn btn-primary btn-large", data: { confirm: 'Are you sure?' } %>

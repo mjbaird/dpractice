@@ -1,0 +1,30 @@
+<div class="hero-unit">
+  <h1>Derby Practice</h1>
+  <p>Need to plan a practice? This is the motherfucking place to do it.</p>
+  <p><%= link_to "Plan a Practice", new_event_url, :class => "brn btn-primary btn-large" %></p>
+</div>
+ 
+<table class="table table-striped">
+  <thead> 
+    <th>Event</th>
+    <th>Date & Time</th>
+    <th>Actions</td>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td>
+          <%= link_to event.name, event_path(event) %> - <%= event.description %><br />
+          Where? <%= event.location %> | Capacity <%= event.capacity %>
+        </td>
+        <td>
+			<%= link_to event.date, event_path(event) %> 
+        </td>
+        <td>
+          <%= link_to "Edit", edit_event_path(event) %>
+          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody> 
+</table>

@@ -1,0 +1,30 @@
+<h2>Edit <%= @event.name %></h2>
+ 
+<div class="well">
+<%= form_for @event do |form| %>
+  <div>
+    <%= form.label :name %><br />
+    <%= form.text_field :name %>
+  </div>
+ 
+  <div>
+    <%= form.label :description %><br />
+    <%= form.text_field :description %>
+  </div>
+ 
+  <div>
+    <%= form.label :location %><br />
+    <%= form.text_field :location %>
+  </div>
+ 
+  <div>
+    <%= form.label :date %><br />
+    <%= form.text_field :date %>
+  </div>
+   <div>
+    <%= form.label :capacity %><br />
+    <%= form.text_field :capacity %>
+  </div>
+</div>
+  <p><%= form.submit %></p>
+<% end %>
